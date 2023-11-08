@@ -25,6 +25,7 @@ require_once __DIR__ . '/db/db.php';
           <div class="card-body">
             <h5 class="card-title"><?php echo $movie->name ?></h5>
             <p class="card-text"><?php echo $movie->date ?></p>
+            <p class="card-text"><?php echo $movie->getGenres() ?></p>
           </div>
         </div>
       <?php endforeach ?>
