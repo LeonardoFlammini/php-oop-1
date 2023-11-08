@@ -1,6 +1,9 @@
 <?php
 
 
+require_once __DIR__ . '/Model/Movie.php';
+require_once __DIR__ . '/Model/Media.php';
+require_once __DIR__ . '/db/db.php';
 
 ?>
 
@@ -15,8 +18,16 @@
 </head>
 <body>
   <main>
-    <div class="container my-5">
-      Hello
+    <div class="container my-5 d-flex justify-content-around ">
+      <?php foreach ($movies as $movie):?>
+        <div class="card" style="width: 18rem;">
+          <img src="img/<?php echo $movie->poster->file_name ?>" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"><?php echo $movie->name ?></h5>
+            <p class="card-text"><?php echo $movie->date ?></p>
+          </div>
+        </div>
+      <?php endforeach ?>
     </div>
   </main>
  
