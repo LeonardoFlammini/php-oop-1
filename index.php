@@ -2,6 +2,7 @@
 
 
 require_once __DIR__ . '/Model/Movie.php';
+require_once __DIR__ . '/Model/SerieTv.php';
 require_once __DIR__ . '/Model/Media.php';
 require_once __DIR__ . '/db/db.php';
 
@@ -18,19 +19,42 @@ require_once __DIR__ . '/db/db.php';
 </head>
 <body>
   <main>
-    <div class="container my-5 d-flex justify-content-around ">
-      <?php foreach ($movies as $movie):?>
-        <div class="card" style="width: 18rem;">
-          <img src="img/<?php echo $movie->poster->file_name ?>" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title"><?php echo $movie->name ?></h5>
-            <p class="card-text"><?php echo $movie->date ?></p>
-            <p class="card-text"><?php echo $movie->getGenres() ?></p>
+    
+    <div class="container my-5">
+      
+      <h1 class="my-3 text-center my-3">Films</h1>
+      
+      <div class="row row-cols-4 justify-content-around">
+        <?php foreach ($movies as $movie):?>
+          <div class="card" style="width: 18rem;">
+            <img src="img/<?php echo $movie->poster->file_name ?>" class="card-img-top" alt="...">
+            <!-- TODO: fare controllo all'immagine e scrivere l'alt -->
+            <div class="card-body">
+              <h5 class="card-title"><?php echo $movie->name ?></h5>
+              <p class="card-text"><?php echo $movie->date ?></p>
+              <p class="card-text"><?php echo $movie->getGenres() ?></p>
+            </div>
           </div>
-        </div>
-      <?php endforeach ?>
+        <?php endforeach ?>
+      </div>
+
+      <h1 class="my-3 text-center my-3">Series</h1>
+
+      <div class="row row-cols-4 justify-content-around my-3">
+        <?php foreach ($series as $serie):?>
+          <div class="card" style="width: 18rem;">
+            <img src="img/<?php echo $serie->poster->file_name ?>" class="card-img-top" alt="...">
+            <!-- TODO: fare controllo all'immagine e scrivere l'alt -->
+            <div class="card-body">
+              <h5 class="card-title"><?php echo $serie->name ?></h5>
+              <p class="card-text"><?php echo $serie->date ?></p>
+              <p class="card-text"><?php echo $serie->getGenres() ?></p>
+            </div>
+          </div>
+        <?php endforeach ?>
+      </div>
+      
     </div>
   </main>
- 
 </body>
 </html>

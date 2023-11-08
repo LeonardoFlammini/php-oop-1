@@ -1,5 +1,6 @@
 Php-oop-1
 ===
+(6/11/23)
 Oggi pomeriggio ripassate i primi concetti di classe, variabili e metodi d’istanza che abbiamo visto stamattina e create un file `index.php` in cui:
  - è definita una **classe ‘Movie’**
    => all’interno della classe sono dichiarate delle **variabili d’istanza**
@@ -14,3 +15,39 @@ Facciamo attenzione all’organizzazione del codice, suddividendolo in appositi 
 - creando un file dedicato ai dati (tipo le array di oggetti) che potremmo chiamare db.php
 - mettendo ciascuna classe nel proprio file e magari raggruppare tutte le classi in una cartella dedicata che possiamo chiamare Models/
 - organizzando il layout dividendo la struttura ed i contenuti in file e parziali dedicati.
+
+*****
+
+(7/11/23)
+esercizio di oggi: PHP Object-oriented programming 1
+nome repo: php-oop-1
+
+Oggi continuiamo a lavorare nella stessa repo riprendendo i concetti visti insieme stamattina.
+
+**Traccia**
+
+Realizzare una classe Production che sia estesa dalla classe Movie e dalla classe TvSerie.
+
+**Attenzione #1**
+gli attributi comuni sia a Movie che a TvSerie dovrebbero trovarsi in Production così da essere ereditati correttamente! Qualcosa andrebbe spostato?
+
+**Attenzione #2**
+occhio ai costruttori! spostando un attributo nella classe genitore, dobbiamo passarlo al costruttore del genitore con parent::__construct(...);
+
+**Aggiungiamo anche degli attributi unici per le nuove classi.**
+Per esempio:
+per la classe Movie:
+$published_year anno di pubblicazione
+$running_timedurata in minuti
+
+**per la classe TvSerie:**
+$aired_from_year anno di messa in onda del primo episodio
+$aired_to_year anno di messa in onda dell’ultimo episodio
+$number_of_episodes numero di episodi
+$number_of_seasons numero di stagioni
+
+**Bonus**
+
+Creare un array misto di oggetti Movie e TvSerie. Stamparli a schermo in delle cards.
+NB: per gestire correttamente le stampe va gestito correttamente il polimorfismo delle classi, ossia la capacità di fare override dei metodi del genitore piuttosto che ereditarli.
+Buon Lavoro!
