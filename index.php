@@ -1,6 +1,7 @@
 <?php
 
 
+require_once __DIR__ . '/Model/Production.php';
 require_once __DIR__ . '/Model/Movie.php';
 require_once __DIR__ . '/Model/SerieTv.php';
 require_once __DIR__ . '/Model/Media.php';
@@ -32,7 +33,9 @@ require_once __DIR__ . '/db/db.php';
             <div class="card-body">
               <h5 class="card-title"><?php echo $movie->name ?></h5>
               <p class="card-text"><?php echo $movie->date ?></p>
+              <p class="card-text"><?php echo $movie->duration ?> min</p>
               <p class="card-text"><?php echo $movie->getGenres() ?></p>
+              <p class="card-text"><?php echo $movie->description ?></p>
             </div>
           </div>
         <?php endforeach ?>
@@ -48,7 +51,10 @@ require_once __DIR__ . '/db/db.php';
             <div class="card-body">
               <h5 class="card-title"><?php echo $serie->name ?></h5>
               <p class="card-text"><?php echo $serie->date ?></p>
+              <p class="card-text"><?php echo $serie->seasons ?> stagioni</p>
+              <p class="card-text"><?php echo $serie->episodes ?> episodi totali</p>
               <p class="card-text"><?php echo $serie->getGenres() ?></p>
+              <p class="card-text"><?php echo $serie->description ?></p>
             </div>
           </div>
         <?php endforeach ?>

@@ -1,20 +1,11 @@
 <?php
 
-class Movie {
-  public $name;
-  public $date;
-  public $genre;
-  public $poster;
+class Movie extends Production {
+  public $duration;
 
-  public function __construct(string $_name, string $_date, array $_genre, Media $_poster ){
-    $this->name = $_name;
-    $this->date = $_date;
-    $this->genre = $_genre;
-    $this->poster = $_poster;
-  }
+  public function __construct(string $_name, string $_date, array $_genre, string $_description , int $_duration ,Media $_poster ){
+    $this->duration = $_duration;
 
-
-  public function getGenres(){
-    return implode(",", $this->genre);
+    parent::__construct($_name,  $_date,  $_genre,  $_description,  $_poster );
   }
 };
